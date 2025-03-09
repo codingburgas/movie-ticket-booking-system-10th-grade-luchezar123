@@ -1,20 +1,44 @@
-// movie-ticket-booking-system.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <string>
+using namespace std;
 
+void menu()
+{
+    int menu;
+    cout << "Choose in which menu you want to enter" << endl << "1 for admin" << endl << "2 for customer" << endl;
+    cin >> menu;
+    switch (menu)
+    {
+    case 1:
+        cout << "You have entered admin menu";
+        break;
+    case 2:
+        cout << "You have entered customer menu";;
+        break;
+    default:
+        cout << "Incorrect input";
+    }
+}
+void cinema()
+{
+    int cinema;
+    cout << "Choose in which cinema you want to go" << endl << "1 for cinemaCity" << endl << "2 for cinemaMax" << endl;
+    cin >> cinema;
+    switch (cinema)
+    {
+    case 1:
+        cout << "You have entered cinemaCity";
+        break;
+    case 2:
+        cout << "You have entered cinemaMax";;
+        break;
+    default:
+        cout << "Incorrect input";
+    }
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    menu();
+    cinema();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
