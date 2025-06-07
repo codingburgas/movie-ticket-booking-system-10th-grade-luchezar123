@@ -1,5 +1,7 @@
-
-#include "../Include/Menu.h"
+﻿
+#include "Menu.h"
+#include "Models.h"
+#include <string>
 
 void clearscreen()
 {
@@ -44,6 +46,38 @@ void Admin::createOrDeleteMovie()
 	{
 	case 1:
 		clearscreen();
+		cout << "Add new movie" << endl;
+
+		{
+			string title, language, genre, releaseDate;
+
+			cin.ignore(); // За да избегнем проблем с getline след cin
+			cout << "Title: ";
+			getline(cin, title);
+
+			cout << "Language: ";
+			getline(cin, language);
+
+			cout << "Genre: ";
+			getline(cin, genre);
+
+			cout << "Date of release: ";
+			getline(cin, releaseDate);
+
+			Movie newMovie{ title, language, genre, releaseDate };
+
+			// Временно отпечатваме за тест:
+			cout << "\nMovie addes successful" << endl;
+			cout << "Title: " << newMovie.title << endl;
+			cout << "Language: " << newMovie.language << endl;
+			cout << "Genre: " << newMovie.genre << endl;
+			cout << "Date: " << newMovie.releaseDate << endl;
+		}
+
+		break;
+
+	/*case 1:
+		clearscreen();
 		cout << "You have chosen to add a film!";
 		break;
 	case 2:
@@ -53,7 +87,7 @@ void Admin::createOrDeleteMovie()
 	default:
 		clearscreen();
 		cout << "Incorrect input";
-		break;
+		break;*/
 	}
 }
 void Admin::adminMenu()
